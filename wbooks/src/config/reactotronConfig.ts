@@ -25,8 +25,8 @@ if (__DEV__) {
 
   // eslint-disable-next-line no-console
   console.tron = {
-    log: Reactotron.logImportant as () => void,
-    clear: Reactotron.clear as () => void,
+    log: Reactotron.logImportant,
+    clear: Reactotron.clear,
     customCommand: Reactotron.onCustomCommand,
     display: Reactotron.display
   };
