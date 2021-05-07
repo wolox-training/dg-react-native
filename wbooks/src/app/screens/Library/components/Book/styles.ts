@@ -7,6 +7,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 15,
     paddingHorizontal: 30,
+    marginVertical: 5,
     borderRadius: 5,
     shadowColor: appTheme.colors.black,
     shadowOffset: {
