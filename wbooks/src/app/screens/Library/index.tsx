@@ -1,14 +1,12 @@
 import React from 'react';
-import { FlatList, ListRenderItem } from 'react-native';
+import { SafeAreaView, View, FlatList, ListRenderItem } from 'react-native';
 import { Book } from '@interfaces/Book';
+import { BOOKS_MOCK } from '@constants/mockBooks';
 
 import BookComponent from './components/Book';
+import styles from './styles';
 
-interface Props {
-  books: Book[];
-}
-
-function Library({ books }: Props) {
+function Library() {
   const getKeyExtractor = (item: Book) => `${item.id}`;
 
   const renderItem: ListRenderItem<Book> = ({ item }) => (
@@ -16,12 +14,16 @@ function Library({ books }: Props) {
   );
 
   return (
-    <FlatList
-      showsVerticalScrollIndicator={false}
-      data={books}
-      keyExtractor={getKeyExtractor}
-      renderItem={renderItem}
-    />
+    <SafeAreaView style={styles.container}>
+      <View style={styles.subContainer}>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={BOOKS_MOCK}
+          keyExtractor={getKeyExtractor}
+          renderItem={renderItem}
+        />
+      </View>
+    </SafeAreaView>
   );
 }
 

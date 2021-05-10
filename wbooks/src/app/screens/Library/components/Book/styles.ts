@@ -1,15 +1,15 @@
 import { StyleSheet } from 'react-native';
-import appTheme from '@constants/theme';
+import { COLORS } from '@constants/colors';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: appTheme.colors.white,
+    backgroundColor: COLORS.white,
     flexDirection: 'row',
     paddingVertical: 15,
     paddingHorizontal: 30,
     marginVertical: 5,
     borderRadius: 5,
-    shadowColor: appTheme.colors.black,
+    shadowColor: COLORS.black,
     shadowOffset: {
       width: 0,
       height: 1
@@ -27,14 +27,11 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 17,
-    fontFamily: 'SFUIText-Bold',
-    color: appTheme.colors.gray,
-    fontWeight: '400'
+    color: COLORS.gray,
+    fontWeight: '600'
   },
   author: {
     fontSize: 15,
-    fontFamily: 'SFUIText-Light',
-    color: appTheme.colors.gray,
-    fontWeight: '400'
+    color: COLORS.gray
   }
 });
