@@ -6,7 +6,7 @@ import styles from './styles';
 
 interface Props {
   id: number;
-  imageUrl: string;
+  imageUrl?: string | null;
   title: string;
   author: string;
 }
