@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
+import { validateImageUrl } from '@utils/bookUtils';
 
 import Styles from './styles';
 
@@ -11,9 +12,11 @@ interface Props {
 }
 
 function Book({ imageUrl, title, author }: Props) {
+  const source = validateImageUrl(imageUrl);
+
   return (
     <View style={Styles.container}>
-      <Image source={{ uri: imageUrl }} style={Styles.image} />
+      <Image source={source} style={Styles.image} />
       <View style={Styles.descriptionContainer}>
         <Text style={Styles.title}>{title}</Text>
         <Text style={Styles.author}>{author}</Text>
