@@ -1,12 +1,15 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 import LibraryScreen from '@screens/Library';
+
+const LibraryStack = createStackNavigator();
 
 const App = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <LibraryScreen />
+      <LibraryStack.Navigator initialRouteName="Library">
+        <LibraryStack.Screen name="Library" component={LibraryScreen} />
+      </LibraryStack.Navigator>
     </>
   );
 };
