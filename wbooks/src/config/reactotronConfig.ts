@@ -19,7 +19,7 @@ declare global {
 
 if (__DEV__) {
   const { scriptURL } = NativeModules.SourceCode;
-  const scriptHostName = scriptURL.split('://')[1].split(':')[0];
+  const scriptHostName = scriptURL?.split('://')[1].split(':')[0];
 
   Reactotron.configure({ name: APP_CONSTANTS.appName, host: scriptHostName }).use(reactotronRedux())
     .setAsyncStorageHandler!(AsyncStorage).connect();
