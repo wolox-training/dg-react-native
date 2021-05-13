@@ -2,8 +2,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import LibraryScreen from '@screens/Library';
 import BookDetailScreen from '@screens/BookDetail';
-import HeaderBackground from '@app/components/HeaderBackground';
-import HeaderBackButton from '@app/components/HeaderBackButton';
+import HeaderBackground from '@components/HeaderBackground';
+import HeaderBackButton from '@components/HeaderBackButton';
 import { ROUTES } from '@constants/routes';
 
 import styles from './styles';
