@@ -5,7 +5,7 @@ import bcImage from '@assets/general/bc_nav_bar.png';
 import styles from './styles';
 
 function HeaderBackground() {
-  return <Image style={styles.image} source={bcImage} />;
+  return <Image resizeMode="stretch" style={styles.image} source={bcImage} />;
 }
 
 export default HeaderBackground;
