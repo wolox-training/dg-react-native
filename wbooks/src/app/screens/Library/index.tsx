@@ -2,17 +2,17 @@ import React, { useEffect } from 'react';
 import { SafeAreaView, FlatList, ListRenderItem } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Book, BookState } from '@interfaces/Book';
-import bookActions from '@redux/book/actions';
+import BookActions from '@redux/book/actions';
 
 import BookComponent from './components/Book';
 import styles from './styles';
 
 function Library() {
   const dispatch = useDispatch();
-  const { books } = useSelector((state: BookState) => state);
+  const books = useSelector<BookState, Book[]>(state => state.books);
 
   useEffect(() => {
-    dispatch(bookActions.getBooks());
+    dispatch(BookActions.getBooks());
   }, [dispatch]);
 
   const getKeyExtractor = (item: Book) => `${item.id}`;
