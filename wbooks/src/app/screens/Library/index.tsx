@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaView, FlatList, ListRenderItem } from 'react-native';
-import { Book } from '@interfaces/Book';
-import { BOOKS_MOCK } from '@constants/mockBooks';
+import { useDispatch, useSelector } from 'react-redux';
+import { Book, BookState } from '@interfaces/Book';
+import bookActions from '@redux/book/actions';
 
 import BookComponent from './components/Book';
 import styles from './styles';
 
 function Library() {
+  const dispatch = useDispatch();
+  const { books } = useSelector((state: BookState) => state);
+
+  useEffect(() => {
+    dispatch(bookActions.getBooks());
+  }, [dispatch]);
+
   const getKeyExtractor = (item: Book) => `${item.id}`;
 
   const renderItem: ListRenderItem<Book> = ({ item }) => (
@@ -18,7 +26,7 @@ function Library() {
       <FlatList
         style={styles.subContainer}
         showsVerticalScrollIndicator={false}
-        data={BOOKS_MOCK}
+        data={books}
         keyExtractor={getKeyExtractor}
         renderItem={renderItem}
       />

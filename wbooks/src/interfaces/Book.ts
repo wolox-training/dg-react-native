@@ -7,3 +7,8 @@ export interface Book {
   year: string;
   imageUrl?: string | null;
 }
+
+export interface BookState {
+  books: Book[];
+  book?: Book;
+}
