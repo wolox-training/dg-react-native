@@ -10,7 +10,7 @@ import styles from './styles';
 
 const LibraryStack = createStackNavigator();
 
-const App = () => {
+function AppNavigator() {
   return (
     <LibraryStack.Navigator
       initialRouteName={ROUTES.library}
@@ -25,6 +25,6 @@ const App = () => {
       <LibraryStack.Screen name={ROUTES.bookDetail} component={BookDetailScreen} />
     </LibraryStack.Navigator>
   );
-};
+}
 
-export default App;
+export default AppNavigator;
