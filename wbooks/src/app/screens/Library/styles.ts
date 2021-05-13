@@ -4,10 +4,10 @@ import { COLORS } from '@constants/colors';
 export default StyleSheet.create({
   container: {
     backgroundColor: COLORS.background,
-    flex: 1
+    flex: 1,
+    paddingVertical: 10
   },
   subContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 10
+    paddingHorizontal: 20
   }
 });
