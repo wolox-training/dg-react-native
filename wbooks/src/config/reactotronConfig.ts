@@ -1,5 +1,6 @@
 import { NativeModules } from 'react-native';
 import Reactotron from 'reactotron-react-native';
+import { reactotronRedux } from 'reactotron-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { APP_CONSTANTS } from '@constants/app';
 
@@ -18,11 +19,10 @@ declare global {
 
 if (__DEV__) {
   const { scriptURL } = NativeModules.SourceCode;
-  const scriptHostName = scriptURL.split('://')[1].split(':')[0];
+  const scriptHostName = scriptURL?.split('://')[1].split(':')[0];
 
-  Reactotron.configure({ name: APP_CONSTANTS.appName, host: scriptHostName }).setAsyncStorageHandler!(
-    AsyncStorage
-  ).connect();
+  Reactotron.configure({ name: APP_CONSTANTS.appName, host: scriptHostName }).use(reactotronRedux())
+    .setAsyncStorageHandler!(AsyncStorage).connect();
 
   // eslint-disable-next-line no-console
   console.tron = {
