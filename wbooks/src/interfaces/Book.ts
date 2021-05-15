@@ -10,4 +10,6 @@ export interface Book {
 
 export interface BookState {
   books: Book[];
+  loading: boolean;
+  error: string;
 }

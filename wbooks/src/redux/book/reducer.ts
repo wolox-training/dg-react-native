@@ -8,14 +8,19 @@ interface Action {
 }
 
 const initialState: BookState = {
-  books: []
+  books: [],
+  loading: false,
+  error: ''
 };
 
 function bookReducer(state = initialState, action: Action): BookState {
   switch (action.type) {
+    case actions.GET_BOOKS:
+      return { ...state, loading: true };
     case actions.GET_BOOKS_SUCCESS:
-      return { ...state, books: action.payload as Book[] };
+      return { ...state, books: action.payload as Book[], loading: false };
     case actions.GET_BOOKS_FAILURE:
+      return { ...state, loading: false, error: action.payload as string };
     default:
       return state;
   }
