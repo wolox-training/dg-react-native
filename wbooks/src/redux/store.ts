@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware, combineReducers as CR } from 'redux';
 import thunk from 'redux-thunk';
-import { wrapCombineReducers } from 'redux-recompose';
+import { fetchMiddleware, wrapCombineReducers } from 'redux-recompose';
 import Reactotron from '@config/reactotronConfig';
 import { BookState } from '@interfaces/Book';
 
@@ -15,5 +15,5 @@ const rootReducer = combineReducers({ book: bookReducer });
 
 export default createStore(
   rootReducer,
-  compose(applyMiddleware(thunk), __DEV__ && Reactotron.createEnhancer())
+  compose(applyMiddleware(thunk, fetchMiddleware), __DEV__ && Reactotron.createEnhancer())
 );
