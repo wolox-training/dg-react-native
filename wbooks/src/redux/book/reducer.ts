@@ -1,20 +1,26 @@
-import { BOOKS_MOCK } from '@constants/mockBooks';
-import { BookState } from '@interfaces/Book';
+import { Book, BookState } from '@interfaces/Book';
 
 import { actions } from './actions';
 
 interface Action {
   type: string;
+  payload?: string | Book[];
 }
 
 const initialState: BookState = {
-  books: []
+  books: [],
+  loading: false,
+  error: ''
 };
 
 function bookReducer(state = initialState, action: Action): BookState {
   switch (action.type) {
     case actions.GET_BOOKS:
-      return { ...state, books: BOOKS_MOCK };
+      return { ...state, loading: true };
+    case actions.GET_BOOKS_SUCCESS:
+      return { ...state, books: action.payload as Book[], loading: false };
+    case actions.GET_BOOKS_FAILURE:
+      return { ...state, loading: false, error: action.payload as string };
     default:
       return state;
   }
