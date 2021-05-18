@@ -1,19 +1,11 @@
-import { createStore, compose, applyMiddleware, combineReducers as CR } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { fetchMiddleware, wrapCombineReducers } from 'redux-recompose';
+import { fetchMiddleware } from 'redux-recompose';
 import Reactotron from '@config/reactotronConfig';
-import { BookState } from '@interfaces/Book';
 
 import bookReducer from './book/reducer';
 
-export interface AppState {
-  book: BookState;
-}
-
-const combineReducers = wrapCombineReducers(CR);
-const rootReducer = combineReducers({ book: bookReducer });
-
 export default createStore(
-  rootReducer,
+  bookReducer,
   compose(applyMiddleware(thunk, fetchMiddleware), __DEV__ && Reactotron.createEnhancer())
 );
