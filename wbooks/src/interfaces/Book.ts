@@ -10,6 +10,7 @@ export interface Book {
 
 export interface BookState {
   books: Book[];
+  filteredBooks: Book[];
   booksLoading: boolean;
   booksError: string;
 }
