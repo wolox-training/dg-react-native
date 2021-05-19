@@ -15,17 +15,19 @@ function FilterInput() {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.icon} resizeMode="cover" source={icSearchPlaceholder} />
-      <TextInput
-        onChangeText={onHandlerChange}
-        value={value}
-        style={styles.input}
-        placeholder="search"
-        placeholderTextColor="gray"
-      />
-      <TouchableOpacity onPress={onHandlerCloseIconPress} disabled={value === ''}>
-        <Image style={styles.icon} resizeMode="cover" source={value ? close : closeDisable} />
-      </TouchableOpacity>
+      <View style={styles.subContainer}>
+        <Image style={styles.icon} resizeMode="cover" source={icSearchPlaceholder} />
+        <TextInput
+          onChangeText={onHandlerChange}
+          value={value}
+          style={styles.input}
+          placeholder="search"
+          placeholderTextColor="gray"
+        />
+        <TouchableOpacity onPress={onHandlerCloseIconPress} disabled={value === ''}>
+          <Image style={styles.icon} resizeMode="cover" source={value ? close : closeDisable} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

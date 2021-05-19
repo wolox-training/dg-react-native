@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LibraryScreen from '@screens/Library';
 import BookDetailScreen from '@screens/BookDetail';
 import FilterScreen from '@screens/Filter';
-import HeaderFilter from '@components/HeaderFilter';
+import FilterInput from '@components/FilterInput';
 import HeaderBackground from '@components/HeaderBackground';
 import HeaderBackButton from '@components/HeaderBackButton';
 import HeaderRightButton from '@components/HeaderRightButton';
@@ -37,7 +37,10 @@ function AppNavigator() {
         name={ROUTES.filter}
         component={FilterScreen}
         options={{
-          header: HeaderFilter
+          headerTitle: FilterInput,
+          headerRight: () => null,
+          headerLeft: () => null,
+          headerTitleAlign: 'center'
         }}
       />
     </LibraryStack.Navigator>
