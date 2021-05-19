@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
 import icSearchPlaceholder from '@assets/general/ic_search_placeholder.png';
@@ -12,9 +12,15 @@ function FilterInput() {
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    const debounce = setTimeout(() => {
+      dispatch(BookActions.getFilteredBooks(value));
+    }, 300);
+    return () => clearTimeout(debounce);
+  }, [dispatch, value]);
+
   const onHandlerChange = (text: string) => {
     setValue(text);
-    dispatch(BookActions.getFilteredBooks(text));
   };
 
   const onHandlerCloseIconPress = () => onHandlerChange('');
