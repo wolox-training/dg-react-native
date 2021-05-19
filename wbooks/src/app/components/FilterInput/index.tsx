@@ -5,19 +5,20 @@ import icSearchPlaceholder from '@assets/general/ic_search_placeholder.png';
 import closeDisable from '@assets/general/close_disable.png';
 import close from '@assets/general/close.png';
 import BookActions from '@redux/book/actions';
+import useDebounce from '@hooks/useDebounce';
 
 import styles from './styles';
 
 function FilterInput() {
   const [value, setValue] = useState('');
+  const debounceSearchTerm = useDebounce(value, 300);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const debounce = setTimeout(() => {
+    if (debounceSearchTerm) {
       dispatch(BookActions.getFilteredBooks(value));
-    }, 300);
-    return () => clearTimeout(debounce);
-  }, [dispatch, value]);
+    }
+  }, [debounceSearchTerm, dispatch, value]);
 
   const onHandlerChange = (text: string) => {
     setValue(text);
