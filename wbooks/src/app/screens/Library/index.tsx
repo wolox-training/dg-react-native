@@ -3,8 +3,8 @@ import { SafeAreaView, FlatList, ListRenderItem } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Book, BookState } from '@interfaces/Book';
 import BookActions from '@redux/book/actions';
+import BookComponent from '@components/Book';
 
-import BookComponent from './components/Book';
 import styles from './styles';
 
 function Library() {
