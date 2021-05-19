@@ -8,6 +8,11 @@ export default StyleSheet.create({
     paddingVertical: 10
   },
   subContainer: {
+    flex: 1,
     paddingHorizontal: 20
+  },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: 'center'
   }
 });

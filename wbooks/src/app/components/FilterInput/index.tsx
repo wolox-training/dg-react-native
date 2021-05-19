@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import { View, TextInput, Image, TouchableOpacity } from 'react-native';
+import { useDispatch } from 'react-redux';
 import icSearchPlaceholder from '@assets/general/ic_search_placeholder.png';
 import closeDisable from '@assets/general/close_disable.png';
 import close from '@assets/general/close.png';
+import BookActions from '@redux/book/actions';
 
 import styles from './styles';
 
 function FilterInput() {
   const [value, setValue] = useState('');
+  const dispatch = useDispatch();
 
-  const onHandlerChange = (text: string) => setValue(text);
+  const onHandlerChange = (text: string) => {
+    setValue(text);
+    dispatch(BookActions.getFilteredBooks(text));
+  };
 
-  const onHandlerCloseIconPress = () => setValue('');
+  const onHandlerCloseIconPress = () => onHandlerChange('');
 
   return (
     <View style={styles.container}>
