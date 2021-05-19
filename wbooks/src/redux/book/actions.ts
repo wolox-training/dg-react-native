@@ -3,12 +3,12 @@ import { getBooks } from '@services/BookService';
 
 export const actions = createTypes(completeTypes({ primaryActions: ['GET_BOOKS'] }), '@@BOOK');
 
-const target = 'books';
+const TARGET = 'books';
 
 const actionCreators = {
   getBooks: () => ({
     type: actions.GET_BOOKS,
-    target,
+    target: TARGET,
     service: getBooks
   })
 };

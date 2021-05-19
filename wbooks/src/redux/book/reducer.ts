@@ -3,11 +3,7 @@ import { BookState } from '@interfaces/Book';
 
 import { actions } from './actions';
 
-const bookState = {
-  books: []
-};
-
-const initialState: BookState = completeState({ description: bookState });
+export const initialState: BookState = completeState({ description: { books: [] } });
 
 const bookReducer = {
   primaryActions: [actions.GET_BOOKS]
