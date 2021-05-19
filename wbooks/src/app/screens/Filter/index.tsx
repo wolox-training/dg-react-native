@@ -30,7 +30,7 @@ function Library() {
         keyExtractor={getKeyExtractor}
         renderItem={renderItem}
         ListEmptyComponent={renderEmptyComponent}
-        contentContainerStyle={books && books.length === 0 && styles.emptyContainer}
+        contentContainerStyle={books.length === 0 && styles.emptyContainer}
       />
     </SafeAreaView>
   );
