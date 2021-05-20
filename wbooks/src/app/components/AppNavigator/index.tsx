@@ -35,7 +35,6 @@ function AppNavigator() {
         component={FilterScreen}
         options={{
           headerTitle: FilterInput,
-          headerLeft: () => null,
           headerTitleAlign: 'center'
         }}
       />

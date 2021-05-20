@@ -7,8 +7,9 @@ const closeIconSize = 17;
 
 export default StyleSheet.create({
   container: {
-    width,
-    paddingHorizontal: 13
+    // 58 is the width value of the back button
+    width: width - 58,
+    paddingLeft: 13
   },
   subContainer: {
     borderRadius: 14,
