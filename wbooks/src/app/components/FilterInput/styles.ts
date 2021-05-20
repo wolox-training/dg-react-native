@@ -2,11 +2,13 @@ import { StyleSheet, Platform, Dimensions } from 'react-native';
 import { COLORS } from '@constants/colors';
 
 const { width } = Dimensions.get('window');
+const searchIconSize = 13;
+const closeIconSize = 17;
 
 export default StyleSheet.create({
   container: {
     width,
-    paddingHorizontal: 12.5
+    paddingHorizontal: 13
   },
   subContainer: {
     borderRadius: 14,
@@ -15,9 +17,17 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
-  icon: {
-    width: 13,
-    height: 13
+  searchIcon: {
+    width: searchIconSize,
+    height: searchIconSize
+  },
+  closeIcon: {
+    width: closeIconSize,
+    height: closeIconSize,
+    tintColor: COLORS.disabled
+  },
+  iconEnabled: {
+    tintColor: COLORS.danger
   },
   input: {
     paddingHorizontal: 13,

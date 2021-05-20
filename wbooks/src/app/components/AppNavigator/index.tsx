@@ -6,7 +6,7 @@ import FilterScreen from '@screens/Filter';
 import FilterInput from '@components/FilterInput';
 import HeaderBackground from '@components/HeaderBackground';
 import HeaderBackButton from '@components/HeaderBackButton';
-import HeaderRightButton from '@components/HeaderRightButton';
+import HeaderSearchIcon from '@app/components/HeaderSearchIcon';
 import { ROUTES } from '@constants/routes';
 
 import styles from './styles';
@@ -22,23 +22,19 @@ function AppNavigator() {
         headerBackground: HeaderBackground,
         headerTitleStyle: styles.headerTitle,
         headerBackImage: HeaderBackButton,
-        headerBackTitleVisible: false,
-        headerRight: HeaderRightButton
+        headerBackTitleVisible: false
       }}>
-      <LibraryStack.Screen name={ROUTES.library} component={LibraryScreen} />
       <LibraryStack.Screen
-        name={ROUTES.bookDetail}
-        component={BookDetailScreen}
-        options={{
-          headerRight: () => <></>
-        }}
+        name={ROUTES.library}
+        component={LibraryScreen}
+        options={{ headerRight: HeaderSearchIcon }}
       />
+      <LibraryStack.Screen name={ROUTES.bookDetail} component={BookDetailScreen} />
       <LibraryStack.Screen
         name={ROUTES.filter}
         component={FilterScreen}
         options={{
           headerTitle: FilterInput,
-          headerRight: () => null,
           headerLeft: () => null,
           headerTitleAlign: 'center'
         }}

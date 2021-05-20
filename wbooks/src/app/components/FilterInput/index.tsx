@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
 import icSearchPlaceholder from '@assets/general/ic_search_placeholder.png';
-import closeDisable from '@assets/general/close_disable.png';
 import close from '@assets/general/close.png';
 import BookActions from '@redux/book/actions';
 import useDebounce from '@hooks/useDebounce';
 
 import styles from './styles';
 
+const delay: number = 300;
+
 function FilterInput() {
   const [value, setValue] = useState('');
-  const debounceSearchTerm = useDebounce(value, 300);
+  const debounceSearchTerm = useDebounce(value, delay);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,25 +21,19 @@ function FilterInput() {
     }
   }, [debounceSearchTerm, dispatch, value]);
 
-  const onHandlerChange = (text: string) => {
-    setValue(text);
-  };
-
-  const onHandlerCloseIconPress = () => onHandlerChange('');
+  const onHandlerCloseIconPress = () => setValue('');
 
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
-        <Image style={styles.icon} resizeMode="cover" source={icSearchPlaceholder} />
-        <TextInput
-          onChangeText={onHandlerChange}
-          value={value}
-          style={styles.input}
-          placeholder="search"
-          placeholderTextColor="gray"
-        />
+        <Image style={styles.searchIcon} resizeMode="cover" source={icSearchPlaceholder} />
+        <TextInput onChangeText={setValue} value={value} style={styles.input} />
         <TouchableOpacity onPress={onHandlerCloseIconPress} disabled={value === ''}>
-          <Image style={styles.icon} resizeMode="cover" source={value ? close : closeDisable} />
+          <Image
+            style={[styles.closeIcon, value ? styles.iconEnabled : {}]}
+            resizeMode="cover"
+            source={close}
+          />
         </TouchableOpacity>
       </View>
     </View>

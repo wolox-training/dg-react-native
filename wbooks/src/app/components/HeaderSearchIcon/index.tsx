@@ -6,7 +6,7 @@ import { ROUTES } from '@constants/routes';
 
 import styles from './styles';
 
-function HeaderRightButton() {
+function HeaderSearchIcon() {
   const navigation = useNavigation();
 
   const onNavigate = () => navigation.navigate(ROUTES.filter);
@@ -18,4 +18,4 @@ function HeaderRightButton() {
   );
 }
 
-export default HeaderRightButton;
+export default HeaderSearchIcon;
