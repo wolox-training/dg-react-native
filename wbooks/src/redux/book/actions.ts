@@ -1,5 +1,6 @@
 import { createTypes, completeTypes } from 'redux-recompose';
 import { getBooks, getFilteredBooks } from '@services/BookService';
+import { FilteredBooks } from '@interfaces/Book';
 
 export const actions = createTypes(
   completeTypes({ primaryActions: ['GET_BOOKS', 'GET_FILTERED_BOOKS'] }),
@@ -12,11 +13,11 @@ const actionCreators = {
     target: 'books',
     service: getBooks
   }),
-  getFilteredBooks: (query: string) => ({
+  getFilteredBooks: (data: FilteredBooks) => ({
     type: actions.GET_FILTERED_BOOKS,
     target: 'filteredBooks',
     service: getFilteredBooks,
-    payload: query
+    payload: data
   })
 };
 
