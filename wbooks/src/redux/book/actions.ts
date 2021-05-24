@@ -7,6 +7,11 @@ export const actions = createTypes(
   '@@BOOK'
 );
 
+export const targets = {
+  books: 'books',
+  filteredBooks: 'filteredBooks'
+};
+
 const actionCreators = {
   getBooks: () => ({
     type: actions.GET_BOOKS,
