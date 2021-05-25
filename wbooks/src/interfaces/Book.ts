@@ -8,14 +8,9 @@ export interface Book {
   imageUrl?: string | null;
 }
 
-export interface FilteredBooks {
-  books: Book[];
-  query: string;
-}
-
 export interface BookState {
   books: Book[];
-  filteredBooks: FilteredBooks;
   booksLoading: boolean;
   booksError: string;
+  filterQuery: string;
 }

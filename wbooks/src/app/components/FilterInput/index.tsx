@@ -1,11 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
 import icSearchPlaceholder from '@assets/general/ic_search_placeholder.png';
 import close from '@assets/general/close.png';
-import BookActions from '@redux/book/actions';
 import useDebounce from '@hooks/useDebounce';
-import { BOOKS_MOCK } from '@constants/mockBooks';
+import BookActions from '@redux/book/actions';
 
 import styles from './styles';
 
@@ -16,14 +15,9 @@ function FilterInput() {
   const debounceSearchTerm = useDebounce(value, DELAY);
   const dispatch = useDispatch();
 
-  useMemo(() => {
+  useEffect(() => {
     if (debounceSearchTerm) {
-      const filteredBooks = value
-        ? BOOKS_MOCK.filter(book => {
-            return book.title.toLowerCase().includes(value.toLowerCase());
-          })
-        : [];
-      dispatch(BookActions.getFilteredBooks({ books: filteredBooks, query: value }));
+      dispatch(BookActions.setFilterQuery(value));
     }
   }, [debounceSearchTerm, dispatch, value]);
 
