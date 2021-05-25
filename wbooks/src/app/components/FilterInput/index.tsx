@@ -8,11 +8,11 @@ import useDebounce from '@hooks/useDebounce';
 
 import styles from './styles';
 
-const delay: number = 300;
+const DELAY = 300;
 
 function FilterInput() {
   const [value, setValue] = useState('');
-  const debounceSearchTerm = useDebounce(value, delay);
+  const debounceSearchTerm = useDebounce(value, DELAY);
   const dispatch = useDispatch();
 
   useEffect(() => {

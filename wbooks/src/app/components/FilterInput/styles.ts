@@ -2,8 +2,8 @@ import { StyleSheet, Platform, Dimensions } from 'react-native';
 import { COLORS } from '@constants/colors';
 
 const { width } = Dimensions.get('window');
-const searchIconSize = 13;
-const closeIconSize = 17;
+const SEARCH_ICON_SIZE = 13;
+const CLOSE_ICON_SIZE = 17;
 
 export default StyleSheet.create({
   container: {
@@ -19,12 +19,12 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   searchIcon: {
-    width: searchIconSize,
-    height: searchIconSize
+    width: SEARCH_ICON_SIZE,
+    height: SEARCH_ICON_SIZE
   },
   closeIcon: {
-    width: closeIconSize,
-    height: closeIconSize,
+    width: CLOSE_ICON_SIZE,
+    height: CLOSE_ICON_SIZE,
     tintColor: COLORS.disabled
   },
   iconEnabled: {

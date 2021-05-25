@@ -33,7 +33,7 @@ function BookList({ books, query, showEmptyComponent }: Props) {
         keyExtractor={getKeyExtractor}
         renderItem={renderItem}
         ListEmptyComponent={showEmptyComponent ? renderEmptyComponent : null}
-        contentContainerStyle={books && books.length === 0 && styles.emptyContainer}
+        contentContainerStyle={!books?.length && styles.emptyContainer}
       />
     </SafeAreaView>
   );
