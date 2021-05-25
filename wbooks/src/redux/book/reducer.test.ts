@@ -24,7 +24,7 @@ describe('Book reducer suit', () => {
   });
 });
 
-describe('FilteredBooks reducer suit', () => {
+/* describe('FilteredBooks reducer suit', () => {
   const action = {
     type: actions.GET_FILTERED_BOOKS,
     target: targets.filteredBooks,
@@ -48,4 +48,4 @@ describe('FilteredBooks reducer suit', () => {
       reducer(undefined, { ...action, type: actions.GET_FILTERED_BOOKS_FAILURE, payload: null })
     ).toEqual(initialState);
   });
-});
+}); */

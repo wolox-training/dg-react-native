@@ -46,45 +46,11 @@ describe('Book actions suit', () => {
       }
     ]);
   });
-});
 
-describe('Filtered book actions suit', () => {
-  const store = mockStore();
-
-  beforeEach(() => {
-    store.clearActions();
-  });
-
-  it('Get filtered books failure', async () => {
-    BookService.getFilteredBooks = jest.fn().mockImplementation(() => ({ ok: false, problem: '' }));
-    await store.dispatch(BookActions.getFilteredBooks({ books: [], query: '' }));
+  it('Set filter query test', () => {
+    store.dispatch(BookActions.setFilterQuery(''));
     expect(store.getActions()).toEqual([
-      {
-        target: targets.filteredBooks,
-        type: '@@BOOK/GET_FILTERED_BOOKS'
-      },
-      {
-        target: targets.filteredBooks,
-        type: '@@BOOK/GET_FILTERED_BOOKS_FAILURE',
-        payload: ''
-      }
-    ]);
-  });
-
-  it('Get filtered books success', async () => {
-    const data = { books: [], query: '' };
-    BookService.getFilteredBooks = jest.fn().mockImplementation(() => ({ ok: true, data, problem: '' }));
-    await store.dispatch(BookActions.getFilteredBooks(data));
-    expect(store.getActions()).toEqual([
-      {
-        target: targets.filteredBooks,
-        type: '@@BOOK/GET_FILTERED_BOOKS'
-      },
-      {
-        target: targets.filteredBooks,
-        type: '@@BOOK/GET_FILTERED_BOOKS_SUCCESS',
-        payload: data
-      }
+      { target: targets.filterQuery, type: '@@BOOK/SET_FILTER_QUERY', payload: '' }
     ]);
   });
 });
