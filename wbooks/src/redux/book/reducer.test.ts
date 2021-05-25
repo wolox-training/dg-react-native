@@ -22,30 +22,10 @@ describe('Book reducer suit', () => {
       initialState
     );
   });
-});
-
-/* describe('FilteredBooks reducer suit', () => {
-  const action = {
-    type: actions.GET_FILTERED_BOOKS,
-    target: targets.filteredBooks,
-    payload: {
-      books: [],
-      query: ''
-    }
-  };
-
-  it('Get filtered books action', () => {
-    expect(reducer(undefined, action)).toEqual({
-      ...initialState,
-      filteredBooksLoading: true
-    });
-  });
-  it('Get filtered books success action', () => {
-    expect(reducer(undefined, { ...action, type: actions.GET_FILTERED_BOOKS_SUCCESS })).toEqual(initialState);
-  });
-  it('Get filtered books failure action', () => {
+  it('Set filter action', () => {
+    const QUERY = 'UX';
     expect(
-      reducer(undefined, { ...action, type: actions.GET_FILTERED_BOOKS_FAILURE, payload: null })
-    ).toEqual(initialState);
+      reducer(undefined, { target: targets.filterQuery, type: actions.SET_FILTER_QUERY, payload: QUERY })
+    ).toEqual({ ...initialState, filterQuery: QUERY });
   });
-}); */
+});
