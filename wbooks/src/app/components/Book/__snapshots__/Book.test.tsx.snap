@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Book test suits Render correctly 1`] = `
+<View
+  accessibilityLabel="bookItem"
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "borderRadius": 5,
+      "elevation": 1,
+      "flexDirection": "row",
+      "marginVertical": 5,
+      "opacity": 1,
+      "paddingHorizontal": 30,
+      "paddingVertical": 15,
+      "shadowColor": "#030303",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.05,
+      "shadowRadius": 1,
+    }
+  }
+>
+  <Image
+    accessibilityLabel="bookImage"
+    source={
+      Object {
+        "process": [Function],
+      }
+    }
+    style={
+      Object {
+        "height": 60,
+        "width": 39,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "marginLeft": 20,
+      }
+    }
+  >
+    <Text
+      accessibilityLabel="bookTitle"
+      style={
+        Object {
+          "color": "#4A4A4A",
+          "fontSize": 17,
+          "fontWeight": "600",
+        }
+      }
+    >
+      Tibia
+    </Text>
+    <Text
+      accessibilityLabel="bookAuthor"
+      style={
+        Object {
+          "color": "#4A4A4A",
+          "fontSize": 15,
+        }
+      }
+    >
+      John Doe
+    </Text>
+  </View>
+</View>
+`;
