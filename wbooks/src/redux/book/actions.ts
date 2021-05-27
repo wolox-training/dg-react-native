@@ -1,25 +1,25 @@
 import { createTypes, completeTypes } from 'redux-recompose';
 import BookService from '@services/BookService';
 
-export const actions = createTypes(
+export const ACTIONS = createTypes(
   completeTypes({ primaryActions: ['GET_BOOKS'], ignoredActions: ['SET_FILTER_QUERY'] }),
   '@@BOOK'
 );
 
-export const targets = {
+export const TARGETS = {
   books: 'books',
   filterQuery: 'filterQuery'
 };
 
 const actionCreators = {
   getBooks: () => ({
-    type: actions.GET_BOOKS,
-    target: targets.books,
+    type: ACTIONS.GET_BOOKS,
+    target: TARGETS.books,
     service: BookService.getBooks
   }),
   setFilterQuery: (query: string) => ({
-    type: actions.SET_FILTER_QUERY,
-    target: targets.filterQuery,
+    type: ACTIONS.SET_FILTER_QUERY,
+    target: TARGETS.filterQuery,
     payload: query
   })
 };

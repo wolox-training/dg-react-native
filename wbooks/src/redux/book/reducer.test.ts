@@ -1,10 +1,10 @@
 import reducer, { initialState } from './reducer';
-import { actions, targets } from './actions';
+import { ACTIONS, TARGETS } from './actions';
 
 describe('Book reducer suit', () => {
   const action = {
-    type: actions.GET_BOOKS,
-    target: targets.books,
+    type: ACTIONS.GET_BOOKS,
+    target: TARGETS.books,
     payload: []
   };
 
@@ -15,17 +15,17 @@ describe('Book reducer suit', () => {
     });
   });
   it('Get books success action', () => {
-    expect(reducer(undefined, { ...action, type: actions.GET_BOOKS_SUCCESS })).toEqual(initialState);
+    expect(reducer(undefined, { ...action, type: ACTIONS.GET_BOOKS_SUCCESS })).toEqual(initialState);
   });
   it('Get books failure action', () => {
-    expect(reducer(undefined, { ...action, type: actions.GET_BOOKS_FAILURE, payload: null })).toEqual(
+    expect(reducer(undefined, { ...action, type: ACTIONS.GET_BOOKS_FAILURE, payload: null })).toEqual(
       initialState
     );
   });
   it('Set filter action', () => {
     const QUERY = 'UX';
     expect(
-      reducer(undefined, { target: targets.filterQuery, type: actions.SET_FILTER_QUERY, payload: QUERY })
+      reducer(undefined, { target: TARGETS.filterQuery, type: ACTIONS.SET_FILTER_QUERY, payload: QUERY })
     ).toEqual({ ...initialState, filterQuery: QUERY });
   });
 });

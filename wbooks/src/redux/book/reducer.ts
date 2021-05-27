@@ -1,25 +1,16 @@
-import { createReducer, completeReducer, completeState } from 'redux-recompose';
+import { createReducer, completeReducer, completeState, onReadValue } from 'redux-recompose';
 import { BookState } from '@interfaces/Book';
 
-import { actions } from './actions';
-
-interface Action {
-  type: string;
-  target: string;
-  payload: string;
-}
+import { ACTIONS } from './actions';
 
 export const initialState: BookState = completeState({
   description: { books: [], filterQuery: '' }
 });
 
 const bookReducer = {
-  primaryActions: [actions.GET_BOOKS],
+  primaryActions: [ACTIONS.GET_BOOKS],
   override: {
-    [actions.SET_FILTER_QUERY]: (state: BookState, action: Action) => ({
-      ...state,
-      [action.target]: action.payload
-    })
+    [ACTIONS.SET_FILTER_QUERY]: onReadValue()
   }
 };
 
