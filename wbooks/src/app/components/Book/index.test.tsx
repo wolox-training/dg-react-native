@@ -1,19 +1,10 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react-native';
+import { useNavigation } from '@react-navigation/native';
+import { fireEvent, render, waitFor } from '@testing-library/react-native';
 import bookPlaceholder from '@assets/book/img_book_placeholder.png';
 import { ROUTES } from '@constants/routes';
 
 import Book from './index';
-
-const mockedNavigate = jest.fn();
-
-jest.mock('@react-navigation/native', () => {
-  return {
-    useNavigation: () => ({
-      navigate: mockedNavigate
-    })
-  };
-});
 
 describe('Book test suits', () => {
   const props = {
@@ -46,6 +37,8 @@ describe('Book test suits', () => {
     const { getByLabelText } = render(<Book {...props} />);
     const item = getByLabelText('bookItem');
     fireEvent.press(item);
-    expect(mockedNavigate).toBeCalledWith(ROUTES.bookDetail);
+    waitFor(() => {
+      expect(useNavigation().navigate).toHaveBeenCalledWith(ROUTES.bookDetail);
+    });
   });
 });
