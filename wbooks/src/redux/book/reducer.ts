@@ -3,12 +3,6 @@ import { BookState } from '@interfaces/Book';
 
 import { actions } from './actions';
 
-interface Action {
-  type: string;
-  target: string;
-  payload: string;
-}
-
 const initialState: BookState = completeState({
   description: { books: [], filterQuery: '' }
 });
