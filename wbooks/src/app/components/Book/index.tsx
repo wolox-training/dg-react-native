@@ -20,11 +20,15 @@ function Book({ imageUrl, title, author }: Props) {
   const onNavigate = () => navigation.navigate(ROUTES.bookDetail);
 
   return (
-    <TouchableOpacity style={styles.container} onPress={onNavigate}>
-      <Image source={source} style={styles.image} />
+    <TouchableOpacity accessibilityLabel="bookItem" style={styles.container} onPress={onNavigate}>
+      <Image accessibilityLabel="bookImage" source={source} style={styles.image} />
       <View style={styles.descriptionContainer}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.author}>{author}</Text>
+        <Text accessibilityLabel="bookTitle" style={styles.title}>
+          {title}
+        </Text>
+        <Text accessibilityLabel="bookAuthor" style={styles.author}>
+          {author}
+        </Text>
       </View>
     </TouchableOpacity>
   );
