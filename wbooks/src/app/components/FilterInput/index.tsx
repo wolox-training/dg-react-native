@@ -3,8 +3,8 @@ import { View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
 import icSearchPlaceholder from '@assets/general/ic_search_placeholder.png';
 import close from '@assets/general/close.png';
-import BookActions from '@redux/book/actions';
 import useDebounce from '@hooks/useDebounce';
+import BookActions from '@redux/book/actions';
 
 import styles from './styles';
 
@@ -17,7 +17,7 @@ function FilterInput() {
 
   useEffect(() => {
     if (debounceSearchTerm) {
-      dispatch(BookActions.getFilteredBooks(value));
+      dispatch(BookActions.setFilterQuery(value));
     }
   }, [debounceSearchTerm, dispatch, value]);
 
