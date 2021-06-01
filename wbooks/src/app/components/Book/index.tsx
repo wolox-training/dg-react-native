@@ -13,11 +13,11 @@ interface Props {
   author: string;
 }
 
-function Book({ imageUrl, title, author }: Props) {
+function Book({ imageUrl, title, author, id }: Props) {
   const navigation = useNavigation();
   const source = validateImageUrl(imageUrl);
 
-  const onNavigate = () => navigation.navigate(ROUTES.bookDetail);
+  const onNavigate = () => navigation.navigate(ROUTES.bookDetail, { bookId: id });
 
   return (
     <TouchableOpacity accessibilityLabel="bookItem" style={styles.container} onPress={onNavigate}>
