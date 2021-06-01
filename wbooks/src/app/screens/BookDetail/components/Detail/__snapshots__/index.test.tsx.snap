@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail test suit Render correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "#EAF6FA",
+      "flex": 1,
+      "paddingVertical": 10,
+    }
+  }
+>
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "padding": 20,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 5,
+              "elevation": 1,
+              "paddingHorizontal": 30,
+              "paddingVertical": 15,
+              "shadowColor": "#030303",
+              "shadowOffset": Object {
+                "height": 1,
+                "width": 0,
+              },
+              "shadowOpacity": 0.18,
+              "shadowRadius": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "marginBottom": 30,
+              }
+            }
+          >
+            <Image
+              accessibilityLabel="detailImage"
+              resizeMode="stretch"
+              source={
+                Object {
+                  "process": [Function],
+                }
+              }
+              style={
+                Object {
+                  "height": 105,
+                  "width": 69,
+                }
+              }
+            />
+            <View>
+              <Text
+                numberOfLines={1}
+                style={
+                  Object {
+                    "color": "#4A4A4A",
+                    "fontSize": 24,
+                    "marginBottom": 5,
+                    "paddingLeft": 20,
+                    "paddingRight": 50,
+                  }
+                }
+              >
+                Ring of Bright Water: The revenge of the dark fire ring
+              </Text>
+              <Text
+                style={
+                  Object {
+                    "color": "#4A4A4A",
+                    "fontSize": 15,
+                    "paddingLeft": 20,
+                  }
+                }
+              >
+                Emmie Thiel
+              </Text>
+              <Text
+                style={
+                  Object {
+                    "color": "#4A4A4A",
+                    "fontSize": 15,
+                    "paddingLeft": 20,
+                  }
+                }
+              >
+                1968
+              </Text>
+              <Text
+                style={
+                  Object {
+                    "color": "#4A4A4A",
+                    "fontSize": 15,
+                    "paddingLeft": 20,
+                  }
+                }
+              >
+                Short story
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityLabel="btn"
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderColor": "#00ADEE",
+                "borderRadius": 22,
+                "borderWidth": 1,
+                "height": 44,
+                "justifyContent": "center",
+                "opacity": 1,
+                "width": "100%",
+              }
+            }
+          >
+            <Text
+              accessibilityLabel="btnTitle"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 15,
+                  },
+                  Object {
+                    "color": "#00ADEE",
+                  },
+                ]
+              }
+            >
+              ADD TO WISHLIST
+            </Text>
+          </View>
+          <View
+            accessibilityLabel="btn"
+            accessible={true}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#00ADEE",
+                "borderColor": "#00ADEE",
+                "borderRadius": 22,
+                "borderWidth": 1,
+                "height": 44,
+                "justifyContent": "center",
+                "marginTop": 10,
+                "opacity": 1,
+                "width": "100%",
+              }
+            }
+          >
+            <Text
+              accessibilityLabel="btnTitle"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 15,
+                  },
+                  Object {
+                    "color": "#FFFFFF",
+                  },
+                ]
+              }
+            >
+              RENT
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;
