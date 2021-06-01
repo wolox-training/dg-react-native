@@ -21,13 +21,11 @@ describe('Button test suits', () => {
     const { getByLabelText, getByText } = render(<Button {...props} />);
     const button = getByLabelText('btn');
     const title = getByLabelText('btnTitle');
-    expect(button).toBeTruthy();
     expect(button.props.style).toEqual({
       ...styles.buttonDefault,
       ...styles.buttonPrimary,
       ...DEFAULT_TOUCHABLE_STYLE
     });
-    expect(title).toBeTruthy();
     expect(getByText(props.title)).toBeTruthy();
     expect(title.props.style).toEqual([styles.titleDefault, styles.titlePrimary]);
   });

@@ -20,7 +20,12 @@ function Detail({ book }: Props) {
         <View style={styles.subContainer}>
           <View style={styles.detailsContainer}>
             <View style={styles.details}>
-              <Image resizeMode="stretch" source={source} style={styles.image} />
+              <Image
+                accessibilityLabel="detailImage"
+                resizeMode="stretch"
+                source={source}
+                style={styles.image}
+              />
               <View>
                 <Text numberOfLines={1} style={styles.title}>
                   {title}
