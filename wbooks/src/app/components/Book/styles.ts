@@ -27,11 +27,11 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 17,
-    color: COLORS.gray,
+    color: COLORS.light,
     fontWeight: '600'
   },
   author: {
     fontSize: 15,
-    color: COLORS.gray
+    color: COLORS.light
   }
 });

@@ -1,8 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { useSelector } from 'react-redux';
+import { BookState } from '@interfaces/Book';
+
+import Detail from './components/Detail';
 
 function BookDetail() {
-  return <View />;
+  const { books } = useSelector<BookState, BookState>(state => state);
+  return <Detail book={books[0]} />;
 }
 
 export default BookDetail;
