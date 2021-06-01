@@ -15,8 +15,10 @@ function Button({ type, title, style, ...props }: Props) {
   const titleStyle = type === 'secondary' ? styles.titleSecondary : styles.titlePrimary;
 
   return (
-    <TouchableOpacity style={[styles.buttonDefault, buttonStyle, style]} {...props}>
-      <Text style={[styles.titleDefault, titleStyle]}>{title}</Text>
+    <TouchableOpacity accessibilityLabel="btn" style={[styles.buttonDefault, buttonStyle, style]} {...props}>
+      <Text accessibilityLabel="btnTitle" style={[styles.titleDefault, titleStyle]}>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 }
