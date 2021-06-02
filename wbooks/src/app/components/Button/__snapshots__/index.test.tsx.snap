@@ -2,44 +2,118 @@
 
 exports[`Button test suits Render correctly 1`] = `
 <View
-  accessibilityLabel="btn"
-  accessible={true}
-  focusable={true}
-  onClick={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#FFFFFF",
-      "borderColor": "#00ADEE",
-      "borderRadius": 22,
-      "borderWidth": 1,
-      "height": 44,
-      "justifyContent": "center",
-      "opacity": 1,
       "width": "100%",
     }
   }
 >
-  <Text
-    accessibilityLabel="btnTitle"
+  <View
+    animatedStyle={
+      Object {
+        "value": Object {
+          "backgroundColor": "#FFFFFF",
+          "width": 275,
+        },
+      }
+    }
+    collapsable={false}
     style={
-      Array [
-        Object {
-          "fontSize": 15,
-        },
-        Object {
-          "color": "#00ADEE",
-        },
-      ]
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 22,
+        "marginVertical": 5,
+        "width": 275,
+      }
     }
   >
-    CLICK ME
-  </Text>
+    <View
+      accessibilityLabel="btn"
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderColor": "#00ADEE",
+          "borderRadius": 22,
+          "borderWidth": 1,
+          "height": 44,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        animatedStyle={
+          Object {
+            "value": Object {
+              "opacity": 1,
+            },
+          }
+        }
+        collapsable={false}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          accessibilityLabel="btnTitle"
+          style={
+            Array [
+              Object {
+                "fontSize": 15,
+              },
+              Object {
+                "color": "#00ADEE",
+              },
+            ]
+          }
+        >
+          CLICK ME
+        </Text>
+      </View>
+      <View
+        animatedStyle={
+          Object {
+            "value": Object {
+              "opacity": 0,
+            },
+          }
+        }
+        collapsable={false}
+        style={
+          Object {
+            "opacity": 0,
+            "position": "absolute",
+          }
+        }
+      >
+        <Image
+          resizeMode="stretch"
+          source={
+            Object {
+              "process": [Function],
+            }
+          }
+          style={
+            Object {
+              "tintColor": "#FFFFFF",
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
 </View>
 `;
