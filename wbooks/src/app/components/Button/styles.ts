@@ -9,6 +9,7 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   animatedStyle: {
+    minWidth: 44,
     borderRadius: 22,
     marginVertical: 5
   },

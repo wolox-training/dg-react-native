@@ -23,9 +23,10 @@ interface Props extends TouchableOpacityProps {
 
 const DURATION = 300;
 const BG_CHANGE_DURATION = 600;
+const TITLE_HIDE_DURATION = 100;
 const ICON_SHOW_DURATION = 900;
-const INITIAL_WIDTH = 275;
-const ANIMATION_WIDTH = 44;
+const INITIAL_WIDTH = '100%';
+const ANIMATION_WIDTH = '10%';
 
 function Button({ type, title, onPress, activeAnimation, ...props }: Props) {
   const titleStyle = type === 'secondary' ? styles.titleSecondary : styles.titlePrimary;
@@ -39,7 +40,7 @@ function Button({ type, title, onPress, activeAnimation, ...props }: Props) {
     backgroundColor: withTiming(color, { duration: BG_CHANGE_DURATION })
   }));
   const titleOpacityStyle = useAnimatedStyle(() => ({
-    opacity: withTiming(titleOpacity, { duration: DURATION })
+    opacity: withTiming(titleOpacity, { duration: TITLE_HIDE_DURATION })
   }));
   const iconOpacityStyle = useAnimatedStyle(() => ({
     opacity: withTiming(iconOpacity, { duration: ICON_SHOW_DURATION })

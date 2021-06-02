@@ -14,7 +14,7 @@ exports[`Button test suits Render correctly 1`] = `
       Object {
         "value": Object {
           "backgroundColor": "#FFFFFF",
-          "width": 275,
+          "width": "100%",
         },
       }
     }
@@ -24,7 +24,8 @@ exports[`Button test suits Render correctly 1`] = `
         "backgroundColor": "#FFFFFF",
         "borderRadius": 22,
         "marginVertical": 5,
-        "width": 275,
+        "minWidth": 44,
+        "width": "100%",
       }
     }
   >
