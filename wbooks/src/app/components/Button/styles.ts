@@ -4,20 +4,22 @@ import { COLORS } from '@constants/colors';
 const ALIGN_POSITION = 'center';
 
 export default StyleSheet.create({
+  container: {
+    width: '100%',
+    alignItems: 'center'
+  },
+  animatedStyle: {
+    minWidth: 44,
+    borderRadius: 22,
+    marginVertical: 5
+  },
   buttonDefault: {
     height: 44,
     width: '100%',
     borderRadius: 22,
     justifyContent: ALIGN_POSITION,
     alignItems: ALIGN_POSITION,
-    borderWidth: 1
-  },
-  buttonPrimary: {
-    backgroundColor: COLORS.white,
-    borderColor: COLORS.secondary
-  },
-  buttonSecondary: {
-    backgroundColor: COLORS.secondary,
+    borderWidth: 1,
     borderColor: COLORS.secondary
   },
   titleDefault: {
@@ -28,5 +30,11 @@ export default StyleSheet.create({
   },
   titleSecondary: {
     color: COLORS.white
+  },
+  iconContainer: {
+    position: 'absolute'
+  },
+  icon: {
+    tintColor: COLORS.white
   }
 });

@@ -35,8 +35,8 @@ function Detail({ book }: Props) {
                 <Text style={styles.generalText}>{genre}</Text>
               </View>
             </View>
-            <Button title="ADD TO WISHLIST" />
-            <Button title="RENT" type="secondary" style={styles.rentButton} />
+            <Button title="ADD TO WISHLIST" activeAnimation />
+            <Button title="RENT" type="secondary" activeAnimation />
           </View>
         </View>
       </ScrollView>

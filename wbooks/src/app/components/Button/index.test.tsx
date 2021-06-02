@@ -23,7 +23,6 @@ describe('Button test suits', () => {
     const title = getByLabelText('btnTitle');
     expect(button.props.style).toEqual({
       ...styles.buttonDefault,
-      ...styles.buttonPrimary,
       ...DEFAULT_TOUCHABLE_STYLE
     });
     expect(getByText(props.title)).toBeTruthy();
@@ -35,7 +34,6 @@ describe('Button test suits', () => {
     const title = getByLabelText('btnTitle');
     expect(button.props.style).toEqual({
       ...styles.buttonDefault,
-      ...styles.buttonSecondary,
       ...DEFAULT_TOUCHABLE_STYLE
     });
     expect(title.props.style).toEqual([styles.titleDefault, styles.titleSecondary]);
