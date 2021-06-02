@@ -15,8 +15,14 @@ interface Props {
 function BookList({ books, query, showEmptyComponent }: Props) {
   const getKeyExtractor = (item: Book) => `${item.id}`;
 
-  const renderItem: ListRenderItem<Book> = ({ item }) => (
-    <BookComponent id={item.id} imageUrl={item.imageUrl} title={item.title} author={item.author} />
+  const renderItem: ListRenderItem<Book> = ({ item, index }) => (
+    <BookComponent
+      id={item.id}
+      imageUrl={item.imageUrl}
+      title={item.title}
+      author={item.author}
+      index={index}
+    />
   );
 
   const renderEmptyComponent = () => {

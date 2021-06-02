@@ -10,7 +10,8 @@ describe('Book test suits', () => {
   const props = {
     author: 'John Doe',
     id: 1,
-    title: 'Tibia'
+    title: 'Tibia',
+    index: 1
   };
 
   it('Render correctly', () => {
