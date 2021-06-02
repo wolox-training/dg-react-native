@@ -44,8 +44,5 @@ export default StyleSheet.create({
     paddingLeft: 20,
     fontSize: 15,
     color: COLORS.light
-  },
-  rentButton: {
-    marginTop: 10
   }
 });
